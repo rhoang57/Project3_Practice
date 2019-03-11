@@ -8,8 +8,8 @@ import ReadDetail from "./pages/ReadDetail";
 import TextEditor from "./pages/TextEditor";
 import NoMatch from "./pages/NoMatch";
 import Navbar from "./components/Navbar";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={BrowsePage} />
           <Route exact path="/write" component={BrowsePage} />
-          <Route exact path="/write/editor" component={TextEditor} />
+          <Route exact path="/write/:id" component={TextEditor} />
           <Route exact path="/read" component={BrowseStories} />
           <Route exact path="/read/:piece_id" component={ReadDetail} />
           <Route exact path="/users/login" component={Login} />

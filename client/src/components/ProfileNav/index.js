@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import "./style.css";
+//import "./style.css";
+import { Link } from "react-router-dom";
 
 class ProfileNav extends Component {
     render() {
         return (
-          <div className="login-div">
-              <a href={this.props.link} className="login-link"><u>login</u></a>
-          </div>
+          
+              <Link to={this.props.link} className="login"><u> login </u></Link>
+          
         )
     }
   }

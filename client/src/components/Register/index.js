@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "./style.css";
+import { Link } from "react-router-dom";
 
 class Register extends Component {
     render() {
@@ -6,7 +8,7 @@ class Register extends Component {
             <>
             <div className="row mt-5">
     <div className="col-md-6 m-auto">
-        <div className="card card-body">
+        <div className="card card-body register-body">
             <h1 className="text-center mb-3">
                 <i className="fas fa-user-plus"></i> Register
             </h1>
@@ -35,7 +37,7 @@ class Register extends Component {
                         Register
                     </button>
                 </form>
-                <p className="lead mt-4">Have An Account? <a href="/users/login" className="text-primary">Login</a></p>
+                <p className="lead mt-4">Have An Account? <Link to="/users/login" className="text-primary">Login</Link></p>
         </div>
     </div>
 </div>
