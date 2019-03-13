@@ -38,3 +38,7 @@ textarea::selection {
 textarea::placeholder {
   color: lightgrey;
 }
+
+.container-fluid {
+  margin-top: 15px;
+}
