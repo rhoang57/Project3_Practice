@@ -9,7 +9,7 @@ class CompleteStory extends Component {
             <Container fluid>
                 <Row>
                 <Col size="12">
-                {this.props.completedstory}
+                {this.props.completedStory}
                 </Col>
                 </Row>
             </Container>

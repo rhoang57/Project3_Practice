@@ -1,19 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
-import logo from './logo.png';
+import logo from './writersblocklogo.png';
 import ProfileNav from '../ProfileNav/';
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link className="navbar-brand" to="/">
+      <nav className="navbar navbar-light bg-light">
+      <Link className="navbar-brand" to="/">
           <img src={logo} alt="logo" />
         </Link>
-        <div>
-          <ul className="navbar-nav">
-            <li className="nav-item">
+        <div className="navbar-nav">
               <Link
                 to="/"
                 className={
@@ -22,20 +20,16 @@ function Navbar() {
                     : "nav-link"
                 }
               >
-                write
+               <i className="fas fa-keyboard"></i> write
               </Link>
-            </li>
-            <li className="nav-item">
               <Link
                 to="/read"
                 className={window.location.pathname === "/read" ? "nav-link active" : "nav-link"}
               >
-                read
+              <i class="fas fa-book-reader"></i>     read
               </Link>
-            </li>
-          </ul>
         </div>
-        <ProfileNav link={"http://localhost:3000/users/login"}/>
+        <div className="login-link"><ProfileNav link={"/users/login"}/></div>
       </nav>
     );
   }

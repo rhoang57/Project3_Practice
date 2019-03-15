@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import StoryPreview from "../components/StoryPreview";
-import {Container, Row, Col} from "../components/Grid";
+import { Container, Row } from "../components/Grid";
 
 class BrowseStories extends Component {
     render() {
