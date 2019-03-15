@@ -3,7 +3,6 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 class Login extends Component {
-
   state = {
     email: "",
     password: ""
@@ -28,7 +27,7 @@ class Login extends Component {
 
               <form action="/users/login" method="POST">
                 <div className="form-group">
-                  <label for="email">Email</label>
+                  <label htmlhtmlFor="email">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -37,11 +36,10 @@ class Login extends Component {
                     placeholder="Enter Email"
                     value={this.state.email}
                     onChange={this.handleInputChange}
-                    
                   />
                 </div>
                 <div className="form-group">
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
                   <input
                     type="password"
                     id="password"

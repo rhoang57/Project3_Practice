@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "../components/Grid";
-import { TextArea, FormBtn } from "../components/Form";
-import "./textEditorStyle.css";
+import { Input, TextArea, FormBtn } from "../components/Form";
 
 
-class TextEditor extends Component {
+
+class NewTextEditor extends Component {
   
   state = {
     blocks: [],
@@ -32,7 +32,12 @@ class TextEditor extends Component {
           <Row>
             <Col size="md-6">
             <form>
-            <div className="preview-text"><i>{this.props.excerpt}</i></div>
+            <Input
+                value={this.state.title}
+                onChange={this.handleInputChange}
+                name="title"
+                placeholder="Title (required)"
+              />
               <TextArea
                 value={this.state.excerpt}
                 onChange={this.handleInputChange}
@@ -40,10 +45,10 @@ class TextEditor extends Component {
                 placeholder="Add your portion of the story here (between 10 and 150 words)"
               />
               <FormBtn
-                disabled={!(this.state.excerpt)}
+                disabled={!(this.state.title && this.state.excerpt)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Block
+                Submit Starting Block
               </FormBtn>
             </form>
             </Col>
@@ -54,4 +59,4 @@ class TextEditor extends Component {
   }
 }
 
-export default TextEditor;
+export default NewTextEditor;

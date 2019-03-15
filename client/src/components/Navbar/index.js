@@ -26,7 +26,7 @@ function Navbar() {
                 to="/read"
                 className={window.location.pathname === "/read" ? "nav-link active" : "nav-link"}
               >
-              <i class="fas fa-book-reader"></i>     read
+              <i className="fas fa-book-reader"></i>     read
               </Link>
         </div>
         <div className="login-link"><ProfileNav link={"/users/login"}/></div>

@@ -3,20 +3,20 @@ import NewBlockPreview from "../components/NewBlockPreview";
 import WriteCard from "../components/WriteCard";
 import { Container, Row, Col } from "../components/Grid";
 
-class BrowsePage extends Component {
+class BrowseWrite extends Component {
     
     state = {
         pieces: []
       }
     
-      componentDidMount() {
-        this.loadiUnfnishedPieces();
-      }
+      // componentDidMount() {
+      //   this.loadiUnfnishedPieces();
+      // }
     
-      loadUnfinishedPieces() {
-        API.getUnfinishedPieces()
-          .then(res => this.setState({ pieces: res.data }));
-      }
+      // loadUnfinishedPieces() {
+      //   API.getUnfinishedPieces()
+      //     .then(res => this.setState({ pieces: res.data }));
+      // }
 
 render() {
     return (
@@ -29,10 +29,10 @@ render() {
             <Col size="md-4">
             {this.state.pieces.map(piece => (
           <WriteCard
-            id={piece.id}
-            key={piece.id}
+            id={piece._id}
+            key={piece._id}
             title={piece.title}
-            excerpt={piece.excerpt}
+            excerpt={piece.blocks[piece.blocks.length-1].text}
             authorCount={piece.authorCount}
           />
         ))}
@@ -45,4 +45,4 @@ render() {
   }
 }
 
-export default BrowsePage;
+export default BrowseWrite;
