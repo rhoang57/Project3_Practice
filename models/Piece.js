@@ -6,8 +6,7 @@ const PieceSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Block'
   }],
-  authorCount: Number,
-  wordCount: Number
+  authorCount: Number
 }, {
   timestamps: true
 });

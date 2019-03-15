@@ -5,30 +5,28 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/writersblocks"
+  "mongodb://localhost/writersblocks",
+  {
+    useNewUrlParser: true
+  }
 );
 
-const userSeed = [
+const piecesSeed = [
   {
-    name: "highwireact",
-    email: "ethansmoller@gmail.com",
-    password: "plaintext1"
+    title: "The Little App That Could",
+    blocks: [],
+    authorCount: 0
   },
   {
-    name: "cvillalta",
-    email: "carlos@carlos.carlos",
-    password: "plaintext2"
-  },
-  {
-    name: "roberthoang",
-    email: "rhoang@hoang.org",
-    password: "plaintext3"
+    title: "Another Piece for Good Measure",
+    blocks: [],
+    authorCount: 0
   }
-];
+]
 
-db.User
+db.Block
   .remove({})
-  .then(() => db.User.collection.insertMany(userSeed))
+  .then(() => db.Piece.collection.insertMany(piecesSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
