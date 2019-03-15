@@ -30,9 +30,3 @@ module.exports = {
       .catch(err => res.status(402).json(err));
   }
 }
-
-const pieceData = {
-  title: this.state.title,
-  blocks: [],
-  authorCount: 0
-}
