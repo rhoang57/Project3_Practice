@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import API from "../utils/API";
 
 
 
 class NewTextEditor extends Component {
   
   state = {
-    blocks: [],
     title: "",
-    excerpt: "",
-    wordCount: "",
-    authorCount: ""
+    text: ""
   };
 
   handleInputChange = event => {
@@ -39,13 +37,13 @@ class NewTextEditor extends Component {
                 placeholder="Title (required)"
               />
               <TextArea
-                value={this.state.excerpt}
+                value={this.state.text}
                 onChange={this.handleInputChange}
-                name="excerpt"
+                name="text"
                 placeholder="Add your portion of the story here (between 10 and 150 words)"
               />
               <FormBtn
-                disabled={!(this.state.title && this.state.excerpt)}
+                disabled={!(this.state.title && this.state.text)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Starting Block
