@@ -13,7 +13,7 @@ class ReadDetail extends Component {
                 <Row>
                 <Col size="12">
                 <FinishedTitle finishedTitle={"Sample Title"} />
-                <CompleteStory completedstory={"This is a complete story."} />
+                <CompleteStory completedStory={"This is a complete story."} />
                 </Col>
                 </Row>
             </Container>

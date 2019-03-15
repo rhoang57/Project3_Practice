@@ -3,6 +3,21 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 class Register extends Component {
+
+    state = {
+        name: "",
+        email: "",
+        password: "",
+        password2: ""
+    }
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value
+        });
+      };
+
     render() {
         return (
             <>
@@ -15,22 +30,22 @@ class Register extends Component {
                 <form action="/users/register" method="POST">
                     <div className="form-group">
                         <label for="name">Name</label>
-                        <input type="name" id="name" name="name" className="form-control" placeholder="Enter Name" value=""
+                        <input type="name" id="name" name="name" className="form-control" placeholder="Enter Name" value={this.state.name} onChange={this.handleInputChange}
                         />
                     </div>
                     <div className="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" className="form-control" placeholder="Enter Email" value=""
+                        <input type="email" id="email" name="email" className="form-control" placeholder="Enter Email" value={this.state.email} onChange={this.handleInputChange}
                         />
                     </div>
                     <div className="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" className="form-control" placeholder="Create Password" value=""
+                        <input type="password" id="password" name="password" className="form-control" placeholder="Create Password" value={this.state.password} onChange={this.handleInputChange}
                         />
                     </div>
                     <div className="form-group">
                         <label for="password2">Confirm Password</label>
-                        <input type="password" id="password2" name="password2" className="form-control" placeholder="Confirm Password" value=""
+                        <input type="password" id="password2" name="password2" className="form-control" placeholder="Confirm Password" value={this.state.password2} onChange={this.handleInputChange}
                         />
                     </div>
                     <button type="submit" className="btn btn-dark btn-block">

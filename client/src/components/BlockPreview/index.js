@@ -4,6 +4,15 @@ import { Link } from "react-router-dom";
 
 
 class BlockPreview extends Component {
+  
+  state = {
+    title: "",
+    excerpt: "",
+    wordCount: "",
+    authorCount: ""
+
+  };
+
   render() {
       return (
           <div className="card h-100">

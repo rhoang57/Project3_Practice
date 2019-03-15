@@ -11,7 +11,7 @@ class AddText extends Component {
     excerpt: "",
     wordCount: "",
     authorCount: "",
-    lastexcerpt: ""
+    lastExcerpt: ""
   };
 
   handleInputChange = event => {
@@ -20,6 +20,10 @@ class AddText extends Component {
       [name]: value
     });
   };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+  }
 
   render() {
       return (
@@ -31,7 +35,7 @@ class AddText extends Component {
                 name="title"
                 placeholder="Title (required)"
               />
-              <LastTextPreview previewtext={"test"}/>
+              <LastTextPreview excerpt={"test"}/>
               <TextArea
                 value={this.state.excerpt}
                 onChange={this.handleInputChange}
@@ -39,7 +43,7 @@ class AddText extends Component {
                 placeholder="Add your portion of the story here (between 10 and 150 words)"
               />
               <FormBtn
-                disabled={!(this.state.title)}
+                disabled={!(this.state.excerpt)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Block

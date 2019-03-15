@@ -3,6 +3,19 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 class Login extends Component {
+
+  state = {
+    email: "",
+    password: ""
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
     return (
       <>
@@ -22,6 +35,9 @@ class Login extends Component {
                     name="email"
                     className="form-control"
                     placeholder="Enter Email"
+                    value={this.state.email}
+                    onChange={this.handleInputChange}
+                    
                   />
                 </div>
                 <div className="form-group">
@@ -32,6 +48,8 @@ class Login extends Component {
                     name="password"
                     className="form-control"
                     placeholder="Enter Password"
+                    value={this.state.password}
+                    onChange={this.handleInputChange}
                   />
                 </div>
                 <button type="submit" className="btn btn-dark btn-block">
